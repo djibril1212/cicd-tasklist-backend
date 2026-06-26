@@ -37,7 +37,8 @@ WORKDIR /app
 
 # Dépendances de production uniquement
 COPY package.json package-lock.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+RUN npm ci --omit=dev && npm cache clean --force \
+ && rm -rf /usr/local/lib/node_modules/npm /usr/local/bin/npm /usr/local/bin/npx
 
 # Schéma + client Prisma généré (récupéré depuis le builder)
 COPY --from=builder /app/prisma ./prisma
