@@ -1,0 +1,17 @@
+node_modules
+dist
+coverage
+reports
+.scannerwork
+.git
+.gitignore
+.env
+*.log
+npm-debug.log*
+.DS_Store
+prisma/test.db
+prisma/test.db-journal
+src/__tests__
+Dockerfile
+.dockerignore
+sonar-project.properties
